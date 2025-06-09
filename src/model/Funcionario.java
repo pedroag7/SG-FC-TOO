@@ -1,0 +1,44 @@
+package model;
+
+import java.time.LocalDate;
+
+public class Funcionario extends Pessoa {
+    private String funcao;
+    private LocalDate dataContratacao;
+    private double salario;
+
+
+    public LocalDate getDataContratacao() {
+        return dataContratacao;
+    }
+
+    public void setDataContratacao(LocalDate dataContratacao) {
+        this.dataContratacao = dataContratacao;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public String getFuncao() {
+        return funcao;
+    }
+
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
+    }
+
+    @Override
+    public void exibirDados() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Função: " + funcao);
+        System.out.println("Data de Contratacao: " + dataContratacao);
+        System.out.println("Salario: " + salario);
+
+
+    }
+}
