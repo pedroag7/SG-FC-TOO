@@ -50,6 +50,14 @@ public class Atleta extends Pessoa {
         this.posicao = posicao;
     }
 
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(Stats stats) {
+        this.stats = stats;
+    }
+
     @Override
     public void exibirDados() {
         System.out.println("Nome: " + nome);
@@ -59,6 +67,7 @@ public class Atleta extends Pessoa {
         System.out.println("Valor de mercado" + valorMercado);
         System.out.println("Data de Contratacao: " + dataContratacao);
         System.out.println("Fim Contrato: " + fimContrato);
+        System.out.println("Stats: " + stats);
     }
 
     @Override

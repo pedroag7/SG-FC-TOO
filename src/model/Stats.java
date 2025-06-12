@@ -1,10 +1,17 @@
 package model;
 
-public abstract class Stats {
+public class Stats {
     private int gols;
     private int assits;
     private int partidas;
     private int quantMvp;
+    private int soma;
+    private int media;
+
+    public Stats() {
+        somaGA();
+        //mediaGA();
+    }
 
     public int getGols() {
         return gols;
@@ -38,15 +45,22 @@ public abstract class Stats {
         this.quantMvp = quantMvp;
     }
 
-    public double mediaGA(){
-        return (double) (gols + assits) / partidas;
+    public void mediaGA(){
+        media = soma/partidas;
     }
 
-    public int somaGA(){
-        int soma = 0;
+    public void somaGA(){
         soma = gols + assits;
-        return soma;
     }
 
-
+    @Override
+    public String toString() {
+        return "Stats{" +
+                "gols=" + gols +
+                ", assits=" + assits +
+                ", partidas=" + partidas +
+                ", quantMvp=" + quantMvp +
+                ", soma=" + soma +
+                '}';
+    }
 }
