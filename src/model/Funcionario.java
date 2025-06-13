@@ -38,7 +38,10 @@ public class Funcionario extends Pessoa {
         System.out.println("Função: " + funcao);
         System.out.println("Data de Contratacao: " + dataContratacao);
         System.out.println("Salario: " + salario);
+    }
 
-
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", Função: " + funcao;
     }
 }

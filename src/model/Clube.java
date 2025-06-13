@@ -46,12 +46,14 @@ public class Clube {
     }
 
     public void exibirAtletas() {
+        System.out.println("Atletas: ");
         for (Atleta atleta : atletas) {
             System.out.println(atletas);
         }
     }
 
     public void exibirPartidas() {
+        System.out.println("Partidas: ");
         for (Partida partida : partidas) {
             System.out.println(partida);
         }

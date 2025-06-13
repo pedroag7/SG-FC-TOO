@@ -3,12 +3,15 @@ package model;
 import java.time.LocalDate;
 
 public class Atleta extends Pessoa {
-    private String posicao;
+    //private String posicao;
     private String nCamisa;
     private double valorMercado;
     private LocalDate dataContratacao;
     private LocalDate fimContrato;
     private Stats stats;
+    private Posicao posicao;
+
+
 
     public double getValorMercado() {
         return valorMercado;
@@ -42,12 +45,8 @@ public class Atleta extends Pessoa {
         this.dataContratacao = dataContratacao;
     }
 
-    public String getPosicao() {
+    public Posicao getPosicao() {
         return posicao;
-    }
-
-    public void setPosicao(String posicao) {
-        this.posicao = posicao;
     }
 
     public Stats getStats() {
@@ -56,6 +55,10 @@ public class Atleta extends Pessoa {
 
     public void setStats(Stats stats) {
         this.stats = stats;
+    }
+
+    public void setPosicao(Posicao posicao) {
+        this.posicao = posicao;
     }
 
     @Override
@@ -72,6 +75,6 @@ public class Atleta extends Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + "Posição: " + posicao;
+        return "Nome: " + nome + ", Posição: " + posicao;
     }
 }

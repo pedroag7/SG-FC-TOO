@@ -8,10 +8,6 @@ public class Stats {
     private int soma;
     private int media;
 
-    public Stats() {
-        somaGA();
-        //mediaGA();
-    }
 
     public int getGols() {
         return gols;
@@ -55,12 +51,6 @@ public class Stats {
 
     @Override
     public String toString() {
-        return "Stats{" +
-                "gols=" + gols +
-                ", assits=" + assits +
-                ", partidas=" + partidas +
-                ", quantMvp=" + quantMvp +
-                ", soma=" + soma +
-                '}';
+        return new StringBuilder().append("Stats{").append("Gols: ").append(gols).append(", Assistencias: ").append(assits).append(", Partidas: ").append(partidas).append(", MVPs: ").append(quantMvp).append(", Soma G/A: ").append(soma).append("Media G/A: ").append(media).append('}').toString();
     }
 }
