@@ -10,8 +10,15 @@ public class Atleta extends Pessoa {
     private LocalDate fimContrato;
     private Stats stats;
     private Posicao posicao;
+    private double salario;
 
+    public double getSalario() {
+        return salario;
+    }
 
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
 
     public double getValorMercado() {
         return valorMercado;
@@ -59,6 +66,15 @@ public class Atleta extends Pessoa {
 
     public void setPosicao(Posicao posicao) {
         this.posicao = posicao;
+    }
+
+    @Override
+    public void bonusSalario() {
+        if (posicao == Posicao.Atacante && stats.getGols() > 50 && stats.getGols() < 100) {
+            salario += salario * 0.3;
+        } else if (posicao == Posicao.Atacante && stats.getGols() > 100) {
+            salario += salario * 0.6;
+        }
     }
 
     @Override

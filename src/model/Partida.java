@@ -12,7 +12,10 @@ public class Partida {
     private ArrayList<Atleta> escalacao;
     private Atleta mvp;
 
-    public Partida() {
+    public Partida(int golsPro, int golsContra) {
+        this.golsPro = golsPro;
+        this.golsContra = golsContra;
+        calcRes();
         this.escalacao = new ArrayList<>();
     }
 
@@ -76,7 +79,16 @@ public class Partida {
         this.escalacao.add(atleta);
     }
 
-    public String
+    public String calcRes() {
+        if (golsPro > golsContra) {
+            resultado = "Vitoria";
+        } else if (golsPro == golsContra) {
+            resultado = "Empate";
+        }else {
+            resultado = "Derrota";
+        }
+        return resultado;
+    }
 
     @Override
     public String toString() {

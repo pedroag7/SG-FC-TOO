@@ -32,7 +32,7 @@ public class teste {
 
         //teste partidas
 
-        Partida p1 = new Partida();
+        Partida p1 = new Partida(5, 0);
         p1.setAdversario("porto alegre reds");
         p1.setData(LocalDate.now());
         p1.addEscalacao(dodi);
@@ -41,6 +41,7 @@ public class teste {
         p1.setResultado("vitoria do imortal tricolor rei de copas");
         p1.setMvp(dodi);
         System.out.println(p1);
+        p1.calcRes();
 
         // teste clube
 
@@ -50,6 +51,7 @@ public class teste {
         imortal.adicionarAtleta(dodi);
         imortal.adicionarPartida(p1);
         imortal.exibirAtletas();
+
         imortal.exibirPartidas();
 
         // teste funcionario

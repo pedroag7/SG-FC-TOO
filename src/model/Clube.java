@@ -8,10 +8,12 @@ public class Clube {
     private LocalDate criacao;
     private ArrayList<Atleta> atletas;
     private ArrayList<Partida> partidas;
+    private ArrayList<Funcionario> funcionarios;
 
     public Clube() {
         this.atletas = new ArrayList<>();
         this.partidas = new ArrayList<>();
+        this.funcionarios = new ArrayList<>();
     }
 
     public String getNome() {
@@ -38,11 +40,18 @@ public class Clube {
         return partidas;
     }
 
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
     public void adicionarAtleta(Atleta atleta) {
         this.atletas.add(atleta);
     }
     public void adicionarPartida(Partida partida) {
         this.partidas.add(partida);
+    }
+    public void adicionarFuncionario(Funcionario funcionario) {
+        this.funcionarios.add(funcionario);
     }
 
     public void exibirAtletas() {
