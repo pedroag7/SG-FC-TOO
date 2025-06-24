@@ -3,12 +3,22 @@ package model;
 import java.time.LocalDate;
 
 public class Atleta extends Pessoa {
-    private String posicao;
+    //private String posicao;
     private String nCamisa;
     private double valorMercado;
     private LocalDate dataContratacao;
     private LocalDate fimContrato;
     private Stats stats;
+    private Posicao posicao;
+    private double salario;
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
 
     public double getValorMercado() {
         return valorMercado;
@@ -42,12 +52,8 @@ public class Atleta extends Pessoa {
         this.dataContratacao = dataContratacao;
     }
 
-    public String getPosicao() {
+    public Posicao getPosicao() {
         return posicao;
-    }
-
-    public void setPosicao(String posicao) {
-        this.posicao = posicao;
     }
 
     public Stats getStats() {
@@ -56,6 +62,19 @@ public class Atleta extends Pessoa {
 
     public void setStats(Stats stats) {
         this.stats = stats;
+    }
+
+    public void setPosicao(Posicao posicao) {
+        this.posicao = posicao;
+    }
+
+    @Override
+    public void bonusSalario() {
+        if (posicao == Posicao.Atacante && stats.getGols() > 50 && stats.getGols() < 100) {
+            salario += salario * 0.3;
+        } else if (posicao == Posicao.Atacante && stats.getGols() > 100) {
+            salario += salario * 0.6;
+        }
     }
 
     @Override
@@ -72,6 +91,6 @@ public class Atleta extends Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + "Posição: " + posicao;
+        return "Nome: " + nome + ", Posição: " + posicao;
     }
 }

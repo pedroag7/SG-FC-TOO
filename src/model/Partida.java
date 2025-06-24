@@ -12,6 +12,13 @@ public class Partida {
     private ArrayList<Atleta> escalacao;
     private Atleta mvp;
 
+    public Partida(int golsPro, int golsContra) {
+        this.golsPro = golsPro;
+        this.golsContra = golsContra;
+        calcRes();
+        this.escalacao = new ArrayList<>();
+    }
+
     public String getResultado() {
         return resultado;
     }
@@ -56,9 +63,9 @@ public class Partida {
         return escalacao;
     }
 
-    public void setEscalacao(ArrayList<Atleta> escalacao) {
+   /* public void setEscalacao(ArrayList<Atleta> escalacao) {
         this.escalacao = escalacao;
-    }
+    }*/
 
     public Atleta getMvp() {
         return mvp;
@@ -66,6 +73,21 @@ public class Partida {
 
     public void setMvp(Atleta mvp) {
         this.mvp = mvp;
+    }
+
+    public void addEscalacao(Atleta atleta) {
+        this.escalacao.add(atleta);
+    }
+
+    public String calcRes() {
+        if (golsPro > golsContra) {
+            resultado = "Vitoria";
+        } else if (golsPro == golsContra) {
+            resultado = "Empate";
+        }else {
+            resultado = "Derrota";
+        }
+        return resultado;
     }
 
     @Override

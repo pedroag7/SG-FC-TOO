@@ -42,5 +42,7 @@ public abstract class Pessoa {
         return idade;
     }
 
+    public abstract void bonusSalario();
+
     public abstract void exibirDados();
 }
